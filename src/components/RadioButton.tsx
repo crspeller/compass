@@ -52,10 +52,10 @@ const RadioContainer = styled.label<{ $size: RadioButtonSize; $disabled?: boolea
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.5 : 1};
-  color: ${props => props.destructive ? cssVar(errorTextColorRgb) : cssVar(centerChannelColorRgb)};
-  ${props => getSizeStyles(props.size)}
+  cursor: ${props => props.$disabled ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.$disabled ? 0.5 : 1};
+  color: ${props => props.$destructive ? cssVar(errorTextColorRgb) : cssVar(centerChannelColorRgb)};
+  ${props => getSizeStyles(props.$size)}
 `;
 
 const HiddenRadio = styled.input.attrs({ type: 'radio' })`
