@@ -46,19 +46,19 @@ const getSizeStyles = (size: ChipSize) => {
     small: css`
       padding: 2px 8px;
       font-size: 11px;
-      height: 20px;
-      gap: 4px;
+      height: 24px;
+      gap: 6px;
     `,
     medium: css`
       padding: 4px 12px;
       font-size: 12px;
-      height: 28px;
-      gap: 6px;
+      height: 32px;
+      gap: 8px;
     `,
     large: css`
       padding: 6px 16px;
       font-size: 14px;
-      height: 36px;
+      height: 40px;
       gap: 8px;
     `,
   };
