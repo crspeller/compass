@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import {
   centerChannelBgRgb,
   centerChannelColorRgb,
-  denimButtonBgRgb,
   linkColorRgb,
   radiusM,
   errorTextColorRgb,
