@@ -13,7 +13,9 @@
     "clean": "rimraf dist",
     "build": "vite build",
     "dev": "vite",
-    "test-app": "vite --config vite.config.ts"
+    "test-app": "vite --config vite.config.ts",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch"
   },
   "keywords": [],
   "author": "",
