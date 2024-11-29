@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Checkbox } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
