@@ -53,13 +53,6 @@ export const borderDark = '--border-dark';
 export const globalHeaderBackgroundRgb = '--global-header-background-rgb';
 export const globalHeaderTextRgb = '--global-header-text-rgb';
 
-// Semantic colors
-//export const semanticColorGeneral = '--semantic-color-general';
-//export const semanticColorInfo = '--semantic-color-info';
-//export const semanticColorSuccess = '--semantic-color-success';
-//export const semanticColorWarning = '--semantic-color-warning';
-//export const semanticColorDanger = '--semantic-color-danger';
-
 export function cssVar(name: string, opacity: number = 1) {
   return `rgba(var(${name}), ${opacity})`;
 }

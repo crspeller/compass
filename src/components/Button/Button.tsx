@@ -7,7 +7,7 @@ import {
   denimButtonBgRgb,
   linkColorRgb,
   radiusM,
-  semanticColorDanger,
+  errorTextColorRgb,
   borderDefault,
   cssVar
 } from '../../styles/variables';
@@ -66,7 +66,7 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   const baseStyles = {
     primary: css`
       background-color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(denimButtonBgRgb)};
       color: ${cssVar(buttonColorRgb)};
     `,
@@ -74,28 +74,28 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
       background-color: transparent;
       border: var(${borderDefault});
       border-color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(denimButtonBgRgb)};
       color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(denimButtonBgRgb)};
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(denimButtonBgRgb)};
     `,
     quaternary: css`
       background-color: ${cssVar(centerChannelBgRgb)};
       color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(centerChannelColorRgb)};
     `,
     link: css`
       background-color: transparent;
       color: ${destructive ? 
-        cssVar(semanticColorDanger) : 
+        cssVar(errorTextColorRgb) : 
         cssVar(linkColorRgb)};
       text-decoration: underline;
       padding: 0;
@@ -124,12 +124,12 @@ const StyledButton = styled.button<ButtonProps>`
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            cssVar(semanticColorDanger, 0.2) : 
+            cssVar(errorTextColorRgb, 0.2) : 
             cssVar(denimButtonBgRgb, 0.2)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            cssVar(semanticColorDanger, 0.3) : 
+            cssVar(errorTextColorRgb, 0.3) : 
             cssVar(denimButtonBgRgb, 0.3)};
         }
       `;
@@ -137,12 +137,12 @@ const StyledButton = styled.button<ButtonProps>`
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            cssVar(semanticColorDanger, 0.1) : 
+            cssVar(errorTextColorRgb, 0.1) : 
             cssVar(denimButtonBgRgb, 0.1)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            cssVar(semanticColorDanger, 0.2) : 
+            cssVar(errorTextColorRgb, 0.2) : 
             cssVar(denimButtonBgRgb, 0.2)};
         }
       `;
