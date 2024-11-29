@@ -75,9 +75,9 @@ const SwitchInput = styled.input<{
   width: var(--switch-width);
   height: var(--switch-height);
   border-radius: var(${radiusM});
-  background-color: rgba(var(--center-channel-color-rgb), 0.16);
+  background-color: rgba(var(--center-channel-color-rgb), 0.08);
   cursor: inherit;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
 
   ${props => getSizeStyles(props.$size || SwitchSize.Medium)}
 
@@ -90,7 +90,12 @@ const SwitchInput = styled.input<{
     height: var(--thumb-size);
     border-radius: 50%;
     background-color: ${cssVar(centerChannelBgRgb)};
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: rgba(var(--center-channel-color-rgb), 0.16);
   }
 
   &:checked {
@@ -101,6 +106,14 @@ const SwitchInput = styled.input<{
 
     &::before {
       transform: translateX(calc(var(--switch-width) - var(--thumb-size) - 2 * var(--thumb-margin)));
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover:not(:disabled) {
+      background-color: ${props => 
+        props.$destructive ? 
+        `rgba(var(${errorTextColorRgb}), 0.92)` : 
+        `rgba(var(${buttonBgRgb}), 0.92)`};
     }
   }
 
@@ -111,6 +124,11 @@ const SwitchInput = styled.input<{
 
   &:disabled {
     cursor: not-allowed;
+    opacity: 0.5;
+    
+    &::before {
+      box-shadow: none;
+    }
   }
 `;
 
