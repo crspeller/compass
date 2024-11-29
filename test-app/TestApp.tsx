@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -88,6 +88,62 @@ export const TestApp = () => {
                 />
                 <div>Checked state: {checked ? 'true' : 'false'}</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Text Inputs</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextInput size={TextInputSize.Small} label="Small" placeholder="Small input" />
+                <TextInput size={TextInputSize.Medium} label="Medium" placeholder="Medium input" />
+                <TextInput size={TextInputSize.Large} label="Large" placeholder="Large input" />
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextInput label="Default" placeholder="Default input" />
+                <TextInput label="Disabled" placeholder="Disabled input" disabled />
+                <TextInput label="With Error" placeholder="Error input" error helperText="This is an error message" />
+                <TextInput label="With Helper" placeholder="Helper text" helperText="This is helper text" />
+              </div>
+            </div>
+
+            <div>
+              <h3>With Icons</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextInput 
+                  label="Leading Icon" 
+                  placeholder="Search..." 
+                  leadingIcon="🔍"
+                />
+                <TextInput 
+                  label="Trailing Icon" 
+                  placeholder="Enter password" 
+                  type="password"
+                  trailingIcon="👁️"
+                />
+                <TextInput 
+                  label="Both Icons" 
+                  placeholder="Both icons" 
+                  leadingIcon="📧"
+                  trailingIcon="✉️"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3>Full Width</h3>
+              <TextInput 
+                label="Full Width Input"
+                placeholder="This input takes up the full width"
+                fullWidth
+              />
             </div>
           </div>
         </section>
