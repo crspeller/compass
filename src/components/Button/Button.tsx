@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { themeVariables } from '../../styles/variables';
-import { getCSSVariable } from '../../styles/utils';
 
 export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'link';
