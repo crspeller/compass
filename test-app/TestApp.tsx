@@ -1,38 +1,51 @@
-import React, { useState } from 'react';
-import * as Components from '../src/index';
+import React from 'react';
+import { Button } from '../src/index';
 
 export const TestApp = () => {
-  const [selectedComponent, setSelectedComponent] = useState<string>('');
-  
-  // Get all exported components
-  const componentList = Object.keys(Components);
-  
-  // Render the selected component
-  const renderComponent = () => {
-    if (!selectedComponent) return null;
-    
-    const Component = (Components as any)[selectedComponent];
-    return <Component />;
-  };
-
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Component Test App</h1>
+      <h1>Button Component Examples</h1>
       
-      <div style={{ marginBottom: '20px' }}>
-        <select 
-          value={selectedComponent}
-          onChange={(e) => setSelectedComponent(e.target.value)}
-        >
-          <option value="">Select a component</option>
-          {componentList.map(name => (
-            <option key={name} value={name}>{name}</option>
-          ))}
-        </select>
-      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <section>
+          <h2>Variants</h2>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="tertiary">Tertiary</Button>
+            <Button variant="quaternary">Quaternary</Button>
+            <Button variant="link">Link</Button>
+          </div>
+        </section>
 
-      <div style={{ padding: '20px', border: '1px solid #ccc' }}>
-        {renderComponent()}
+        <section>
+          <h2>Sizes</h2>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Button size="x-small">X-Small</Button>
+            <Button size="small">Small</Button>
+            <Button size="medium">Medium</Button>
+            <Button size="large">Large</Button>
+          </div>
+        </section>
+
+        <section>
+          <h2>States</h2>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Button>Default</Button>
+            <Button disabled>Disabled</Button>
+            <Button destructive>Destructive</Button>
+            <Button fullWidth>Full Width</Button>
+          </div>
+        </section>
+
+        <section>
+          <h2>With Icons</h2>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Button leadingIcon="→">Leading Icon</Button>
+            <Button trailingIcon="←">Trailing Icon</Button>
+            <Button leadingIcon="→" trailingIcon="←">Both Icons</Button>
+          </div>
+        </section>
       </div>
     </div>
   );
