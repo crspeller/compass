@@ -1,76 +1,65 @@
-// Colors
-export const buttonColor = '--button-color';
-export const centerChannelBg = '--center-channel-bg';
-export const centerChannelColor = '--center-channel-color';
-export const errorText = '--error-text';
-export const linkColor = '--link-color';
-export const mentionHighlightBg = '--mention-highlight-bg';
-export const mentionHighlightLink = '--mention-highlight-link';
-export const newMessageSeparator = '--new-message-separator';
-export const onlineIndicator = '--online-indicator';
-export const awayIndicator = '--away-indicator';
-export const dndIndicator = '--dnd-indicator';
-export const secondaryBlue = '--secondary-blue';
-export const denimButtonBg = '--denim-button-bg';
-export const sidebarBg = '--sidebar-bg';
-export const sidebarText = '--sidebar-text';
-export const sidebarUnreadText = '--sidebar-unread-text';
-export const sidebarTextHoverBg = '--sidebar-text-hover-bg';
-export const sidebarTextActiveBorder = '--sidebar-text-active-border';
-export const sidebarTextActiveColor = '--sidebar-text-active-color';
-export const sidebarHeaderBg = '--sidebar-header-bg';
-export const sidebarHeaderTextColor = '--sidebar-header-text-color';
-export const onlineIndicatorBg = '--online-indicator-bg';
-export const semanticColorDanger = '--semantic-color-danger';
-export const semanticColorSuccess = '--semantic-color-success';
-export const semanticColorWarning = '--semantic-color-warning';
-export const semanticColorMention = '--semantic-color-mention';
+// RGB values
+export const awayIndicatorRgb = '--away-indicator-rgb';
+export const buttonBgRgb = '--button-bg-rgb';
+export const buttonColorRgb = '--button-color-rgb';
+export const centerChannelBgRgb = '--center-channel-bg-rgb';
+export const centerChannelColorRgb = '--center-channel-color-rgb';
+export const dndIndicatorRgb = '--dnd-indicator-rgb';
+export const errorTextColorRgb = '--error-text-color-rgb';
+export const linkColorRgb = '--link-color-rgb';
+export const mentionBgRgb = '--mention-bg-rgb';
+export const mentionColorRgb = '--mention-color-rgb';
+export const mentionHighlightBgRgb = '--mention-highlight-bg-rgb';
+export const mentionHighlightLinkRgb = '--mention-highlight-link-rgb';
+export const newMessageSeparatorRgb = '--new-message-separator-rgb';
+export const onlineIndicatorRgb = '--online-indicator-rgb';
+export const sidebarBgRgb = '--sidebar-bg-rgb';
+export const sidebarHeaderBgRgb = '--sidebar-header-bg-rgb';
+export const sidebarHeaderTextColorRgb = '--sidebar-header-text-color-rgb';
+export const sidebarTextRgb = '--sidebar-text-rgb';
+export const sidebarTextActiveBorderRgb = '--sidebar-text-active-border-rgb';
+export const sidebarTextActiveColorRgb = '--sidebar-text-active-color-rgb';
+export const sidebarTextHoverBgRgb = '--sidebar-text-hover-bg-rgb';
+export const sidebarUnreadTextRgb = '--sidebar-unread-text-rgb';
+export const errorBoxBackground = '--error-box-background';
+export const sidebarTeamBackgroundRgb = '--sidebar-team-background-rgb';
+export const secondaryBlueRgb = '--secondary-blue-rgb';
+export const denimStatusOnlineRgb = '--denim-status-online-rgb';
+export const denimButtonBgRgb = '--denim-button-bg-rgb';
+export const titleColorIndigo500Rgb = '--title-color-indigo-500-rgb';
 
-// Typography
-export const fontFamily = '--font-family';
-export const fontFamilyMono = '--font-family-mono';
-export const fontSize = '--font-size';
-export const fontSizeSmall = '--font-size-small';
-export const fontSizeLarge = '--font-size-large';
-export const lineHeight = '--line-height';
-
-// Spacing
-export const spacingXxs = '--spacing-xxs'; // 2px
-export const spacingXs = '--spacing-xs';   // 4px
-export const spacingS = '--spacing-s';     // 8px
-export const spacingM = '--spacing-m';     // 16px
-export const spacingL = '--spacing-l';     // 24px
-export const spacingXl = '--spacing-xl';   // 32px
-export const spacingXxl = '--spacing-xxl'; // 40px
+// Elevation
+export const elevation1 = '--elevation-1';
+export const elevation2 = '--elevation-2';
+export const elevation3 = '--elevation-3';
+export const elevation4 = '--elevation-4';
+export const elevation5 = '--elevation-5';
+export const elevation6 = '--elevation-6';
 
 // Corner Radius
-export const radiusXs = '--radius-xs';  // 2px
-export const radiusS = '--radius-s';    // 4px
-export const radiusM = '--radius-m';    // 8px
-export const radiusL = '--radius-l';    // 16px
-export const radiusXl = '--radius-xl';  // 24px
+export const radiusXs = '--radius-xs';
+export const radiusS = '--radius-s';
+export const radiusM = '--radius-m';
+export const radiusL = '--radius-l';
+export const radiusXl = '--radius-xl';
+export const radiusFull = '--radius-full';
 
 // Borders
 export const borderDefault = '--border-default';
-export const borderStrong = '--border-strong';
-export const borderRadius = '--border-radius';
+export const borderLight = '--border-light';
+export const borderDark = '--border-dark';
 
-// Shadows
-export const shadowXs = '--shadow-xs';
-export const shadowS = '--shadow-s';
-export const shadowM = '--shadow-m';
-export const shadowL = '--shadow-l';
-export const shadowXl = '--shadow-xl';
+// Global Header
+export const globalHeaderBackgroundRgb = '--global-header-background-rgb';
+export const globalHeaderTextRgb = '--global-header-text-rgb';
 
-// Z-index
-export const zIndexDropdown = '--z-index-dropdown';
-export const zIndexSticky = '--z-index-sticky';
-export const zIndexFixed = '--z-index-fixed';
-export const zIndexModal = '--z-index-modal';
-export const zIndexPopover = '--z-index-popover';
-export const zIndexTooltip = '--z-index-tooltip';
+// Semantic colors
+//export const semanticColorGeneral = '--semantic-color-general';
+//export const semanticColorInfo = '--semantic-color-info';
+//export const semanticColorSuccess = '--semantic-color-success';
+//export const semanticColorWarning = '--semantic-color-warning';
+//export const semanticColorDanger = '--semantic-color-danger';
 
-// Transitions
-export const transitionFast = '--transition-fast';     // 100ms
-export const transitionNormal = '--transition-normal'; // 200ms
-export const transitionSlow = '--transition-slow';     // 300ms
+export function cssVar(name: string, opacity: number = 1) {
+  return `rgba(var(${name}), ${opacity})`;
+}
