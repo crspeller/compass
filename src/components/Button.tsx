@@ -12,8 +12,20 @@ import {
   cssVar
 } from '@/styles/variables';
 
-export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'link';
+export enum ButtonSize {
+  XSmall = 'x-small',
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large'
+}
+
+export enum ButtonVariant {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Tertiary = 'tertiary',
+  Quaternary = 'quaternary',
+  Link = 'link'
+}
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** The content of the button */

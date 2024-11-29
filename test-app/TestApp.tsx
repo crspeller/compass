@@ -18,21 +18,21 @@ export const TestApp = () => {
         <section>
           <h2>Variants</h2>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <Button variant="primary">Primary</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="tertiary">Tertiary</Button>
-            <Button variant="quaternary">Quaternary</Button>
-            <Button variant="link">Link</Button>
+            <Button variant={ButtonVariant.Primary}>Primary</Button>
+            <Button variant={ButtonVariant.Secondary}>Secondary</Button>
+            <Button variant={ButtonVariant.Tertiary}>Tertiary</Button>
+            <Button variant={ButtonVariant.Quaternary}>Quaternary</Button>
+            <Button variant={ButtonVariant.Link}>Link</Button>
           </div>
         </section>
 
         <section>
           <h2>Sizes</h2>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <Button size="x-small">X-Small</Button>
-            <Button size="small">Small</Button>
-            <Button size="medium">Medium</Button>
-            <Button size="large">Large</Button>
+            <Button size={ButtonSize.XSmall}>X-Small</Button>
+            <Button size={ButtonSize.Small}>Small</Button>
+            <Button size={ButtonSize.Medium}>Medium</Button>
+            <Button size={ButtonSize.Large}>Large</Button>
           </div>
         </section>
 
@@ -60,9 +60,9 @@ export const TestApp = () => {
             <div>
               <h3>Sizes</h3>
               <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-                <Checkbox size="small" label="Small" />
-                <Checkbox size="medium" label="Medium" />
-                <Checkbox size="large" label="Large" />
+                <Checkbox size={CheckboxSize.Small} label="Small" />
+                <Checkbox size={CheckboxSize.Medium} label="Medium" />
+                <Checkbox size={CheckboxSize.Large} label="Large" />
               </div>
             </div>
 

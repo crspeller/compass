@@ -8,8 +8,17 @@ import {
   spacingXs
 } from '@/styles/variables';
 
-export type CheckboxSize = 'small' | 'medium' | 'large';
-export type CheckboxState = 'unchecked' | 'checked' | 'mixed';
+export enum CheckboxSize {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large'
+}
+
+export enum CheckboxState {
+  Unchecked = 'unchecked',
+  Checked = 'checked',
+  Mixed = 'mixed'
+}
 
 export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** The size of the checkbox */
