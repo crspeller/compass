@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant, RadioButton, RadioButtonSize, Switch, SwitchSize } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant, RadioButton, RadioButtonSize, Switch, SwitchSize, TextArea, TextAreaSize } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -245,6 +245,46 @@ export const TestApp = () => {
                 />
                 <div>Switch state: {checked ? 'ON' : 'OFF'}</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Text Areas</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextArea size={TextAreaSize.Small} placeholder="Small textarea" />
+                <TextArea size={TextAreaSize.Medium} placeholder="Medium textarea" />
+                <TextArea size={TextAreaSize.Large} placeholder="Large textarea" />
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextArea placeholder="Default textarea" />
+                <TextArea placeholder="Disabled textarea" disabled />
+                <TextArea placeholder="Error textarea" error />
+              </div>
+            </div>
+
+            <div>
+              <h3>Rows Configuration</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                <TextArea placeholder="Min 2 rows" minRows={2} />
+                <TextArea placeholder="Max 4 rows" maxRows={4} />
+                <TextArea placeholder="3-5 rows" minRows={3} maxRows={5} />
+              </div>
+            </div>
+
+            <div>
+              <h3>Full Width</h3>
+              <TextArea 
+                placeholder="This textarea takes up the full width"
+                fullWidth
+              />
             </div>
           </div>
         </section>
