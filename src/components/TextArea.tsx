@@ -59,23 +59,23 @@ const StyledTextArea = styled.textarea<{
   background-color: ${cssVar(centerChannelBgRgb)};
   color: ${cssVar(centerChannelColorRgb)};
   border: var(${borderDefault});
-  border-color: ${props => props.error ? cssVar(errorTextColorRgb) : 'inherit'};
+  border-color: ${props => props.$error ? cssVar(errorTextColorRgb) : 'inherit'};
   border-radius: var(${radiusM});
   font-family: inherit;
   resize: vertical;
   transition: all 0.2s ease-in-out;
 
-  ${props => getSizeStyles(props.size || TextAreaSize.Medium)}
+  ${props => getSizeStyles(props.$size || TextAreaSize.Medium)}
 
   &:hover:not(:disabled) {
-    border-color: ${props => props.error ? cssVar(errorTextColorRgb) : cssVar(centerChannelColorRgb)};
+    border-color: ${props => props.$error ? cssVar(errorTextColorRgb) : cssVar(centerChannelColorRgb)};
   }
 
   &:focus {
     outline: none;
-    border-color: ${props => props.error ? cssVar(errorTextColorRgb) : cssVar(linkColorRgb)};
+    border-color: ${props => props.$error ? cssVar(errorTextColorRgb) : cssVar(linkColorRgb)};
     box-shadow: 0 0 0 2px ${cssVar(centerChannelBgRgb)}, 
-                0 0 0 4px ${props => props.error ? cssVar(errorTextColorRgb, 0.2) : cssVar(linkColorRgb, 0.2)};
+                0 0 0 4px ${props => props.$error ? cssVar(errorTextColorRgb, 0.2) : cssVar(linkColorRgb, 0.2)};
   }
 
   &:disabled {
