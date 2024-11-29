@@ -53,57 +53,57 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   const baseStyles = {
     primary: css`
       background-color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.denimButtonBg)};
-      color: ${getCSSVariable(themeVariables.buttonColor)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.denimButtonBg})`};
+      color: var(${themeVariables.buttonColor});
       &:hover:not(:disabled) {
         background-color: ${destructive ? 
-          getCSSVariable(themeVariables.errorText) : 
-          getCSSVariable(themeVariables.secondaryBlue)};
+          `var(${themeVariables.errorText})` : 
+          `var(${themeVariables.secondaryBlue})`};
       }
     `,
     secondary: css`
       background-color: transparent;
-      border: ${getCSSVariable(themeVariables.borderDefault)};
+      border: var(${themeVariables.borderDefault});
       border-color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.denimButtonBg)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.denimButtonBg})`};
       color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.denimButtonBg)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.denimButtonBg})`};
       &:hover:not(:disabled) {
-        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
+        background-color: var(${themeVariables.sidebarTextHoverBg});
       }
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.denimButtonBg)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.denimButtonBg})`};
       &:hover:not(:disabled) {
-        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
+        background-color: var(${themeVariables.sidebarTextHoverBg});
       }
     `,
     quaternary: css`
-      background-color: ${getCSSVariable(themeVariables.centerChannelBg)};
+      background-color: var(${themeVariables.centerChannelBg});
       color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.centerChannelColor)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.centerChannelColor})`};
       &:hover:not(:disabled) {
-        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
+        background-color: var(${themeVariables.sidebarTextHoverBg});
       }
     `,
     link: css`
       background-color: transparent;
       color: ${destructive ? 
-        getCSSVariable(themeVariables.semanticColorDanger) : 
-        getCSSVariable(themeVariables.linkColor)};
+        `var(${themeVariables.semanticColorDanger})` : 
+        `var(${themeVariables.linkColor})`};
       text-decoration: underline;
       padding: 0;
       &:hover:not(:disabled) {
         color: ${destructive ? 
-          getCSSVariable(themeVariables.errorText) : 
-          getCSSVariable(themeVariables.secondaryBlue)};
+          `var(${themeVariables.errorText})` : 
+          `var(${themeVariables.secondaryBlue})`};
       }
     `,
   };
@@ -116,7 +116,7 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   gap: 8px;
   border: none;
-  border-radius: ${getCSSVariable(themeVariables.radiusM)};
+  border-radius: var(${themeVariables.radiusM});
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
