@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant, RadioButton, RadioButtonSize } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -184,6 +184,30 @@ export const TestApp = () => {
                 <Chip leadingIcon="→">Leading Icon</Chip>
                 <Chip trailingIcon="←">Trailing Icon</Chip>
                 <Chip leadingIcon="→" trailingIcon="←">Both Icons</Chip>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Radio Buttons</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <RadioButton name="size" size={RadioButtonSize.Small} label="Small" />
+                <RadioButton name="size" size={RadioButtonSize.Medium} label="Medium" />
+                <RadioButton name="size" size={RadioButtonSize.Large} label="Large" />
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <RadioButton name="state" label="Default" />
+                <RadioButton name="state" label="Checked" checked />
+                <RadioButton name="state" label="Disabled" disabled />
+                <RadioButton name="state" label="Destructive" destructive />
               </div>
             </div>
           </div>
