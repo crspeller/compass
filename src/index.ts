@@ -1,4 +1,4 @@
-export { Button } from '@/components/Button';
-export type { ButtonProps, ButtonSize, ButtonVariant } from '@/components/Button';
-export { Checkbox } from '@/components/Checkbox';
-export type { CheckboxProps, CheckboxSize, CheckboxState } from '@/components/Checkbox';
+export { Button, ButtonSize, ButtonVariant } from '@/components/Button';
+export type { ButtonProps } from '@/components/Button';
+export { Checkbox, CheckboxSize, CheckboxState} from '@/components/Checkbox';
+export type { CheckboxProps } from '@/components/Checkbox';

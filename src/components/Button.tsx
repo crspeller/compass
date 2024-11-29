@@ -128,8 +128,8 @@ const StyledButton = styled.button<ButtonProps>`
   transition: all 0.2s ease-in-out;
   width: ${props => props.fullWidth ? '100%' : 'auto'};
 
-  ${props => getSizeStyles(props.size || 'medium')}
-  ${props => getVariantStyles(props.variant || 'primary', props.destructive || false)}
+  ${props => getSizeStyles(props.size || ButtonSize.Medium)}
+  ${props => getVariantStyles(props.variant || ButtonVariant.Primary, props.destructive || false)}
 
   ${props => {
     if (props.variant === 'secondary') {
@@ -193,8 +193,8 @@ const StyledButton = styled.button<ButtonProps>`
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  size = 'medium',
-  variant = 'primary',
+  size = ButtonSize.Medium,
+  variant = ButtonVariant.Primary,
   fullWidth = false,
   disabled = false,
   destructive = false,

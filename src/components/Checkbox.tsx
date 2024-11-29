@@ -5,7 +5,6 @@ import {
   denimButtonBgRgb,
   errorTextColorRgb,
   cssVar,
-  spacingXs
 } from '@/styles/variables';
 
 export enum CheckboxSize {
@@ -123,7 +122,7 @@ const CheckboxControl = styled.div<{
 `;
 
 export const Checkbox: React.FC<CheckboxProps> = ({
-  size = 'medium',
+  size = CheckboxSize.Medium,
   label,
   checked = false,
   indeterminate = false,
