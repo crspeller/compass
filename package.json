@@ -1,6 +1,6 @@
 {
-  "name": "component-library",
-  "version": "1.0.0",
+  "name": "compass",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.mjs",
@@ -16,7 +16,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
   "devDependencies": {
     "@types/node": "^18.19.67",
     "@types/react": "^18.3.12",
