@@ -38,20 +38,24 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 const getSizeStyles = (size: ButtonSize) => {
   const sizes = {
     'x-small': css`
-      padding: 4px 8px;
+      padding: 2px 8px;
       font-size: 12px;
+      height: 24px;
     `,
     small: css`
-      padding: 6px 12px;
-      font-size: 14px;
+      padding: 4px 12px;
+      font-size: 13px;
+      height: 32px;
     `,
     medium: css`
-      padding: 8px 16px;
-      font-size: 16px;
+      padding: 6px 16px;
+      font-size: 14px;
+      height: 40px;
     `,
     large: css`
-      padding: 12px 24px;
-      font-size: 18px;
+      padding: 8px 20px;
+      font-size: 16px;
+      height: 48px;
     `,
   };
   return sizes[size];
@@ -115,16 +119,16 @@ const StyledButton = styled.button<ButtonProps>`
   ${props => getVariantStyles(props.variant || 'primary', props.destructive || false)}
 
   &:hover:not(:disabled) {
-    filter: brightness(0.95);
-  }
-
-  &:active:not(:disabled) {
     filter: brightness(0.9);
   }
 
+  &:active:not(:disabled) {
+    filter: brightness(0.8);
+  }
+
   &:focus:not(:disabled) {
-    outline: 2px solid var(${linkColor});
-    outline-offset: 1px;
+    outline: none;
+    box-shadow: 0 0 0 2px var(${centerChannelBg}), 0 0 0 4px var(${linkColor});
   }
 
   &:disabled {
