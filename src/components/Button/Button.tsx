@@ -5,12 +5,9 @@ import {
   centerChannelBg,
   centerChannelColor,
   denimButtonBg,
-  errorText,
   linkColor,
   radiusM,
-  secondaryBlue,
   semanticColorDanger,
-  sidebarTextHoverBg,
   borderDefault
 } from '../../styles/variables';
 
