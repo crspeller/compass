@@ -4,6 +4,7 @@ import {
   centerChannelBgRgb,
   centerChannelColorRgb,
   linkColorRgb,
+  buttonBgRgb,
   radiusM,
   errorTextColorRgb,
   cssVar

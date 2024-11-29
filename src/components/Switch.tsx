@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import {
   centerChannelBgRgb,
-  denimButtonBgRgb,
+  buttonBgRgb,
   linkColorRgb,
   errorTextColorRgb,
   radiusM,
@@ -97,7 +97,7 @@ const SwitchInput = styled.input<{
     background-color: ${props => 
       props.destructive ? 
       cssVar(errorTextColorRgb) : 
-      cssVar(denimButtonBgRgb)};
+      cssVar(buttonBgRgb)};
 
     &::before {
       transform: translateX(calc(var(--switch-width) - var(--thumb-size) - 2 * var(--thumb-margin)));

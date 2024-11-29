@@ -24,8 +24,6 @@ export const sidebarUnreadTextRgb = '--sidebar-unread-text-rgb';
 export const errorBoxBackground = '--error-box-background';
 export const sidebarTeamBackgroundRgb = '--sidebar-team-background-rgb';
 export const secondaryBlueRgb = '--secondary-blue-rgb';
-export const denimStatusOnlineRgb = '--denim-status-online-rgb';
-export const denimButtonBgRgb = '--denim-button-bg-rgb';
 export const titleColorIndigo500Rgb = '--title-color-indigo-500-rgb';
 
 // Elevation
