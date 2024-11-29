@@ -118,13 +118,44 @@ const StyledButton = styled.button<ButtonProps>`
   ${props => getSizeStyles(props.size || 'medium')}
   ${props => getVariantStyles(props.variant || 'primary', props.destructive || false)}
 
-  &:hover:not(:disabled) {
-    filter: brightness(0.9);
-  }
-
-  &:active:not(:disabled) {
-    filter: brightness(0.8);
-  }
+  ${props => {
+    if (props.variant === 'secondary') {
+      return css`
+        &:hover:not(:disabled) {
+          background-color: ${props.destructive ? 
+            `var(${semanticColorDanger})20` : 
+            `var(${denimButtonBg})20`};
+        }
+        &:active:not(:disabled) {
+          background-color: ${props.destructive ? 
+            `var(${semanticColorDanger})30` : 
+            `var(${denimButtonBg})30`};
+        }
+      `;
+    } else if (props.variant === 'tertiary') {
+      return css`
+        &:hover:not(:disabled) {
+          background-color: ${props.destructive ? 
+            `var(${semanticColorDanger})10` : 
+            `var(${denimButtonBg})10`};
+        }
+        &:active:not(:disabled) {
+          background-color: ${props.destructive ? 
+            `var(${semanticColorDanger})20` : 
+            `var(${denimButtonBg})20`};
+        }
+      `;
+    } else {
+      return css`
+        &:hover:not(:disabled) {
+          filter: brightness(0.9);
+        }
+        &:active:not(:disabled) {
+          filter: brightness(0.8);
+        }
+      `;
+    }
+  }}
 
   &:focus:not(:disabled) {
     outline: none;
