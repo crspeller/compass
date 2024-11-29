@@ -123,26 +123,26 @@ const StyledButton = styled.button<ButtonProps>`
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger})20` : 
-            `var(${denimButtonBg})20`};
+            `var(${semanticColorDanger}, 0.2)` : 
+            `var(${denimButtonBg}, 0.2)`};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger})30` : 
-            `var(${denimButtonBg})30`};
+            `var(${semanticColorDanger}, 0.3)` : 
+            `var(${denimButtonBg}, 0.3)`};
         }
       `;
     } else if (props.variant === 'tertiary') {
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger})10` : 
-            `var(${denimButtonBg})10`};
+            `var(${semanticColorDanger}, 0.1)` : 
+            `var(${denimButtonBg}, 0.1)`};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger})20` : 
-            `var(${denimButtonBg})20`};
+            `var(${semanticColorDanger}, 0.2)` : 
+            `var(${denimButtonBg}, 0.2)`};
         }
       `;
     } else {
