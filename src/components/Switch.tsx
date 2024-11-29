@@ -67,8 +67,8 @@ const SwitchLabel = styled.span`
 `;
 
 const SwitchInput = styled.input<{
-  size?: SwitchSize;
-  destructive?: boolean;
+  $size?: SwitchSize;
+  $destructive?: boolean;
 }>`
   appearance: none;
   position: relative;
@@ -79,7 +79,7 @@ const SwitchInput = styled.input<{
   cursor: inherit;
   transition: all 0.2s ease-in-out;
 
-  ${props => getSizeStyles(props.size || SwitchSize.Medium)}
+  ${props => getSizeStyles(props.$size || SwitchSize.Medium)}
 
   &::before {
     content: '';
@@ -95,7 +95,7 @@ const SwitchInput = styled.input<{
 
   &:checked {
     background-color: ${props => 
-      props.destructive ? 
+      props.$destructive ? 
       cssVar(errorTextColorRgb) : 
       cssVar(buttonBgRgb)};
 
@@ -127,10 +127,10 @@ export const Switch: React.FC<SwitchProps> = ({
     <SwitchWrapper $disabled={disabled}>
       <SwitchInput
         type="checkbox"
-        size={size}
+        $size={size}
         checked={checked}
         disabled={disabled}
-        destructive={destructive}
+        $destructive={destructive}
         onChange={onChange}
         {...props}
       />
