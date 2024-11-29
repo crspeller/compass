@@ -128,6 +128,10 @@ const StyledButton = styled.button<ButtonProps>`
 
   &:focus:not(:disabled) {
     outline: none;
+  }
+
+  &:focus-visible:not(:disabled) {
+    outline: none;
     box-shadow: 0 0 0 2px var(${centerChannelBg}), 0 0 0 4px var(${linkColor});
   }
 
