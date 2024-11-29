@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import {
   centerChannelColorRgb,
-  denimButtonBgRgb,
+  buttonBgRgb,
   errorTextColorRgb,
   cssVar,
 } from '@/styles/variables';
@@ -84,27 +84,27 @@ const CheckboxControl = styled.div<{
   height: var(--checkbox-size);
   border: 2px solid ${props => props.$invalid ? 
     cssVar(errorTextColorRgb) : 
-    cssVar(denimButtonBgRgb, props.$disabled ? 0.5 : 1)
+    cssVar(buttonBgRgb, props.$disabled ? 0.5 : 1)
   };
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${props => (props.$checked || props.$indeterminate) ? 
-    cssVar(denimButtonBgRgb, props.$disabled ? 0.5 : 1) : 
+    cssVar(buttonBgRgb, props.$disabled ? 0.5 : 1) : 
     'transparent'
   };
   transition: all 0.2s ease;
 
   &:hover:not([disabled]) {
     background-color: ${props => props.$checked || props.$indeterminate ? 
-      cssVar(denimButtonBgRgb, 0.8) : 
-      cssVar(denimButtonBgRgb, 0.1)
+      cssVar(buttonBgRgb, 0.8) : 
+      cssVar(buttonBgRgb, 0.1)
     };
   }
 
   ${HiddenInput}:focus-visible + & {
-    box-shadow: 0 0 0 2px white, 0 0 0 4px ${cssVar(denimButtonBgRgb)};
+    box-shadow: 0 0 0 2px white, 0 0 0 4px ${cssVar(buttonBgRgb)};
   }
 
   &::after {

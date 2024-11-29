@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   centerChannelBgRgb,
   centerChannelColorRgb,
-  denimButtonBgRgb,
+  buttonBgRgb,
   linkColorRgb,
   errorTextColorRgb,
   cssVar
@@ -70,7 +70,7 @@ const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destruct
   height: var(--radio-size);
   border: 2px solid ${props => props.destructive ? 
     cssVar(errorTextColorRgb) : 
-    cssVar(denimButtonBgRgb)};
+    cssVar(buttonBgRgb)};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@ const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destruct
     border-radius: 50%;
     background: ${props => props.destructive ? 
       cssVar(errorTextColorRgb) : 
-      cssVar(denimButtonBgRgb)};
+      cssVar(buttonBgRgb)};
     opacity: ${props => props.checked ? 1 : 0};
     transition: opacity 0.2s ease-in-out;
   }
@@ -97,7 +97,7 @@ const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destruct
   ${HiddenRadio}:hover:not(:disabled) + & {
     border-color: ${props => props.destructive ? 
       cssVar(errorTextColorRgb, 0.8) : 
-      cssVar(denimButtonBgRgb, 0.8)};
+      cssVar(buttonBgRgb, 0.8)};
   }
 `;
 
