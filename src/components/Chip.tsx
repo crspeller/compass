@@ -102,35 +102,41 @@ const getVariantStyles = (
   return baseStyles[variant];
 };
 
-const StyledChip = styled.div<ChipProps>`
+const StyledChip = styled.div<{
+  $size?: ChipSize;
+  $variant?: ChipVariant;
+  $disabled?: boolean;
+  $selected?: boolean;
+  $destructive?: boolean;
+}>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(${radiusM});
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  cursor: ${props => props.$disabled ? 'not-allowed' : 'pointer'};
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   user-select: none;
 
-  ${props => getSizeStyles(props.size || ChipSize.Medium)}
+  ${props => getSizeStyles(props.$size || ChipSize.Medium)}
   ${props => getVariantStyles(
-    props.variant || ChipVariant.Filled,
-    props.selected || false,
-    props.destructive || false
+    props.$variant || ChipVariant.Filled,
+    props.$selected || false,
+    props.$destructive || false
   )}
 
   &:hover:not(:disabled) {
-    background-color: ${props => props.destructive 
+    background-color: ${props => props.$destructive 
       ? cssVar(errorTextColorRgb, 0.12)
-      : props.selected 
+      : props.$selected 
         ? cssVar(buttonBgRgb, 0.12)
         : cssVar(centerChannelColorRgb, 0.12)};
   }
 
   &:active:not(:disabled) {
-    background-color: ${props => props.destructive 
+    background-color: ${props => props.$destructive 
       ? cssVar(errorTextColorRgb, 0.16)
-      : props.selected 
+      : props.$selected 
         ? cssVar(buttonBgRgb, 0.16)
         : cssVar(centerChannelColorRgb, 0.16)};
   }
@@ -144,7 +150,7 @@ const StyledChip = styled.div<ChipProps>`
     box-shadow: 0 0 0 2px ${cssVar(centerChannelBgRgb)}, 0 0 0 4px ${cssVar(linkColorRgb)};
   }
 
-  ${props => props.disabled && css`
+  ${props => props.$disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
@@ -171,11 +177,11 @@ export const Chip: React.FC<ChipProps> = ({
 }) => {
   return (
     <StyledChip
-      size={size}
-      variant={variant}
-      disabled={disabled}
-      selected={selected}
-      destructive={destructive}
+      $size={size}
+      $variant={variant}
+      $disabled={disabled}
+      $selected={selected}
+      $destructive={destructive}
       onClick={disabled ? undefined : onClick}
       role="button"
       tabIndex={disabled ? -1 : 0}
