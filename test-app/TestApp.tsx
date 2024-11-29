@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '../src/index';
+import React, { useState } from 'react';
+import { Button, Checkbox } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -52,6 +52,40 @@ export const TestApp = () => {
             <Button leadingIcon="→">Leading Icon</Button>
             <Button trailingIcon="←">Trailing Icon</Button>
             <Button leadingIcon="→" trailingIcon="←">Both Icons</Button>
+          </div>
+        </section>
+        <section>
+          <h2>Checkboxes</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Checkbox size="small" label="Small" />
+                <Checkbox size="medium" label="Medium" />
+                <Checkbox size="large" label="Large" />
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Checkbox label="Unchecked" />
+                <Checkbox label="Checked" checked />
+                <Checkbox label="Indeterminate" indeterminate />
+                <Checkbox label="Disabled" disabled />
+                <Checkbox label="Invalid" invalid />
+              </div>
+            </div>
+
+            <div>
+              <h3>Interactive Example</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Checkbox 
+                  label="Toggle me" 
+                  onChange={(e) => console.log('Checkbox changed:', e.target.checked)} 
+                />
+              </div>
+            </div>
           </div>
         </section>
       </div>
