@@ -1,9 +1,17 @@
 import React from 'react';
 import { Button } from '../src/index';
+import { createGlobalStyle } from 'styled-components';
+import { defaultTheme } from './theme';
+
+const GlobalStyle = createGlobalStyle`
+  ${defaultTheme}
+`;
 
 export const TestApp = () => {
   return (
-    <div style={{ padding: '20px' }}>
+    <>
+      <GlobalStyle />
+      <div style={{ padding: '20px' }}>
       <h1>Button Component Examples</h1>
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -48,5 +56,6 @@ export const TestApp = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
