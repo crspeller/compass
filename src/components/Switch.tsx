@@ -120,7 +120,7 @@ export const Switch: React.FC<SwitchProps> = ({
   disabled = false,
   destructive = false,
   label,
-  onChange,
+  onChange = () => {},
   ...props
 }) => {
   return (
