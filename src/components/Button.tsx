@@ -4,7 +4,7 @@ import {
   buttonColorRgb,
   centerChannelBgRgb,
   centerChannelColorRgb,
-  denimButtonBgRgb,
+  buttonBgRgb,
   linkColorRgb,
   radiusM,
   errorTextColorRgb,
@@ -79,7 +79,7 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
     primary: css`
       background-color: ${destructive ? 
         cssVar(errorTextColorRgb) : 
-        cssVar(denimButtonBgRgb)};
+        cssVar(buttonBgRgb)};
       color: ${cssVar(buttonColorRgb)};
     `,
     secondary: css`
@@ -87,16 +87,16 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
       border: var(${borderDefault});
       border-color: ${destructive ? 
         cssVar(errorTextColorRgb) : 
-        cssVar(denimButtonBgRgb)};
+        cssVar(buttonBgRgb)};
       color: ${destructive ? 
         cssVar(errorTextColorRgb) : 
-        cssVar(denimButtonBgRgb)};
+        cssVar(buttonBgRgb)};
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
         cssVar(errorTextColorRgb) : 
-        cssVar(denimButtonBgRgb)};
+        cssVar(buttonBgRgb)};
     `,
     quaternary: css`
       background-color: ${cssVar(centerChannelBgRgb)};
@@ -137,12 +137,12 @@ const StyledButton = styled.button<ButtonProps>`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
             cssVar(errorTextColorRgb, 0.2) : 
-            cssVar(denimButtonBgRgb, 0.2)};
+            cssVar(buttonBgRgb, 0.2)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
             cssVar(errorTextColorRgb, 0.3) : 
-            cssVar(denimButtonBgRgb, 0.3)};
+            cssVar(buttonBgRgb, 0.3)};
         }
       `;
     } else if (props.variant === 'tertiary') {
@@ -150,12 +150,12 @@ const StyledButton = styled.button<ButtonProps>`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
             cssVar(errorTextColorRgb, 0.1) : 
-            cssVar(denimButtonBgRgb, 0.1)};
+            cssVar(buttonBgRgb, 0.1)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
             cssVar(errorTextColorRgb, 0.2) : 
-            cssVar(denimButtonBgRgb, 0.2)};
+            cssVar(buttonBgRgb, 0.2)};
         }
       `;
     } else {
