@@ -12,7 +12,9 @@
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c",
     "watch": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "test-app": "vite --config vite.config.ts"
   },
   "keywords": [],
   "author": "",
