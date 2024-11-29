@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const TestApp = () => {
+  const [checked, setChecked] = useState(false);
   return (
     <>
       <GlobalStyle />
@@ -79,11 +80,13 @@ export const TestApp = () => {
 
             <div>
               <h3>Interactive Example</h3>
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexDirection: 'column' }}>
                 <Checkbox 
-                  label="Toggle me" 
-                  onChange={(e) => console.log('Checkbox changed:', e.target.checked)} 
+                  label="Toggle me (Controlled)" 
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
+                <div>Checked state: {checked ? 'true' : 'false'}</div>
               </div>
             </div>
           </div>
