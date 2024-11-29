@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -144,6 +144,47 @@ export const TestApp = () => {
                 placeholder="This input takes up the full width"
                 fullWidth
               />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Chips</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <Chip size={ChipSize.Small}>Small</Chip>
+                <Chip size={ChipSize.Medium}>Medium</Chip>
+                <Chip size={ChipSize.Large}>Large</Chip>
+              </div>
+            </div>
+
+            <div>
+              <h3>Variants</h3>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <Chip variant={ChipVariant.Filled}>Filled</Chip>
+                <Chip variant={ChipVariant.Outlined}>Outlined</Chip>
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <Chip>Default</Chip>
+                <Chip selected>Selected</Chip>
+                <Chip disabled>Disabled</Chip>
+                <Chip destructive>Destructive</Chip>
+              </div>
+            </div>
+
+            <div>
+              <h3>With Icons</h3>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <Chip leadingIcon="→">Leading Icon</Chip>
+                <Chip trailingIcon="←">Trailing Icon</Chip>
+                <Chip leadingIcon="→" trailingIcon="←">Both Icons</Chip>
+              </div>
             </div>
           </div>
         </section>
