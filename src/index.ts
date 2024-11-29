@@ -8,3 +8,5 @@ export { Chip, ChipSize, ChipVariant } from '@/components/Chip';
 export type { ChipProps } from '@/components/Chip';
 export { RadioButton, RadioButtonSize } from '@/components/RadioButton';
 export type { RadioButtonProps } from '@/components/RadioButton';
+export { Switch, SwitchSize } from '@/components/Switch';
+export type { SwitchProps } from '@/components/Switch';

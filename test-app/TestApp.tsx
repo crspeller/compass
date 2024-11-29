@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant, RadioButton, RadioButtonSize } from '../src/index';
+import { Button, ButtonSize, ButtonVariant, Checkbox, CheckboxSize, TextInput, TextInputSize, Chip, ChipSize, ChipVariant, RadioButton, RadioButtonSize, Switch, SwitchSize } from '../src/index';
 import { createGlobalStyle } from 'styled-components';
 import { defaultTheme } from './theme';
 
@@ -208,6 +208,42 @@ export const TestApp = () => {
                 <RadioButton name="state" label="Checked" checked />
                 <RadioButton name="state" label="Disabled" disabled />
                 <RadioButton name="state" label="Destructive" destructive />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Switches</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3>Sizes</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Switch size={SwitchSize.Small} label="Small" />
+                <Switch size={SwitchSize.Medium} label="Medium" />
+                <Switch size={SwitchSize.Large} label="Large" />
+              </div>
+            </div>
+
+            <div>
+              <h3>States</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Switch label="Default" />
+                <Switch label="Checked" checked />
+                <Switch label="Disabled" disabled />
+                <Switch label="Destructive" destructive />
+              </div>
+            </div>
+
+            <div>
+              <h3>Interactive Example</h3>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexDirection: 'column' }}>
+                <Switch 
+                  label="Toggle me (Controlled)" 
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
+                />
+                <div>Switch state: {checked ? 'ON' : 'OFF'}</div>
               </div>
             </div>
           </div>
