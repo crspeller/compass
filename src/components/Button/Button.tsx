@@ -56,11 +56,6 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
         `var(${themeVariables.semanticColorDanger})` : 
         `var(${themeVariables.denimButtonBg})`};
       color: var(${themeVariables.buttonColor});
-      &:hover:not(:disabled) {
-        background-color: ${destructive ? 
-          `var(${themeVariables.errorText})` : 
-          `var(${themeVariables.secondaryBlue})`};
-      }
     `,
     secondary: css`
       background-color: transparent;
@@ -71,27 +66,18 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
       color: ${destructive ? 
         `var(${themeVariables.semanticColorDanger})` : 
         `var(${themeVariables.denimButtonBg})`};
-      &:hover:not(:disabled) {
-        background-color: var(${themeVariables.sidebarTextHoverBg});
-      }
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
         `var(${themeVariables.semanticColorDanger})` : 
         `var(${themeVariables.denimButtonBg})`};
-      &:hover:not(:disabled) {
-        background-color: var(${themeVariables.sidebarTextHoverBg});
-      }
     `,
     quaternary: css`
       background-color: var(${themeVariables.centerChannelBg});
       color: ${destructive ? 
         `var(${themeVariables.semanticColorDanger})` : 
         `var(${themeVariables.centerChannelColor})`};
-      &:hover:not(:disabled) {
-        background-color: var(${themeVariables.sidebarTextHoverBg});
-      }
     `,
     link: css`
       background-color: transparent;
@@ -100,11 +86,6 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
         `var(${themeVariables.linkColor})`};
       text-decoration: underline;
       padding: 0;
-      &:hover:not(:disabled) {
-        color: ${destructive ? 
-          `var(${themeVariables.errorText})` : 
-          `var(${themeVariables.secondaryBlue})`};
-      }
     `,
   };
   return baseStyles[variant];
@@ -124,6 +105,19 @@ const StyledButton = styled.button<ButtonProps>`
 
   ${props => getSizeStyles(props.size || 'medium')}
   ${props => getVariantStyles(props.variant || 'primary', props.destructive || false)}
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.95);
+  }
+
+  &:active:not(:disabled) {
+    filter: brightness(0.9);
+  }
+
+  &:focus:not(:disabled) {
+    outline: 2px solid var(${themeVariables.linkColor});
+    outline-offset: 1px;
+  }
 
   &:disabled {
     opacity: 0.5;
