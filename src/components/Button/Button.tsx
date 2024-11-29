@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
+import { themeVariables } from '../../styles/variables';
+import { getCSSVariable } from '../../styles/utils';
 
 export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'link';
@@ -50,41 +52,58 @@ const getSizeStyles = (size: ButtonSize) => {
 const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   const baseStyles = {
     primary: css`
-      background-color: ${destructive ? '#dc3545' : '#0d6efd'};
-      color: white;
+      background-color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.denimButtonBg)};
+      color: ${getCSSVariable(themeVariables.buttonColor)};
       &:hover:not(:disabled) {
-        background-color: ${destructive ? '#bb2d3b' : '#0b5ed7'};
+        background-color: ${destructive ? 
+          getCSSVariable(themeVariables.errorText) : 
+          getCSSVariable(themeVariables.secondaryBlue)};
       }
     `,
     secondary: css`
       background-color: transparent;
-      border: 1px solid ${destructive ? '#dc3545' : '#0d6efd'};
-      color: ${destructive ? '#dc3545' : '#0d6efd'};
+      border: ${getCSSVariable(themeVariables.borderDefault)};
+      border-color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.denimButtonBg)};
+      color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.denimButtonBg)};
       &:hover:not(:disabled) {
-        background-color: ${destructive ? '#dc354510' : '#0d6efd10'};
+        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
       }
     `,
     tertiary: css`
       background-color: transparent;
-      color: ${destructive ? '#dc3545' : '#0d6efd'};
+      color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.denimButtonBg)};
       &:hover:not(:disabled) {
-        background-color: ${destructive ? '#dc354510' : '#0d6efd10'};
+        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
       }
     `,
     quaternary: css`
-      background-color: #f8f9fa;
-      color: ${destructive ? '#dc3545' : '#212529'};
+      background-color: ${getCSSVariable(themeVariables.centerChannelBg)};
+      color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.centerChannelColor)};
       &:hover:not(:disabled) {
-        background-color: #e9ecef;
+        background-color: ${getCSSVariable(themeVariables.sidebarTextHoverBg)};
       }
     `,
     link: css`
       background-color: transparent;
-      color: ${destructive ? '#dc3545' : '#0d6efd'};
+      color: ${destructive ? 
+        getCSSVariable(themeVariables.semanticColorDanger) : 
+        getCSSVariable(themeVariables.linkColor)};
       text-decoration: underline;
       padding: 0;
       &:hover:not(:disabled) {
-        color: ${destructive ? '#bb2d3b' : '#0b5ed7'};
+        color: ${destructive ? 
+          getCSSVariable(themeVariables.errorText) : 
+          getCSSVariable(themeVariables.secondaryBlue)};
       }
     `,
   };
@@ -97,7 +116,7 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   gap: 8px;
   border: none;
-  border-radius: 4px;
+  border-radius: ${getCSSVariable(themeVariables.radiusM)};
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
