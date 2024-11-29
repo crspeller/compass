@@ -75,12 +75,12 @@ const getVariantStyles = (
       background-color: ${destructive 
         ? cssVar(errorTextColorRgb, 0.08)
         : selected 
-          ? cssVar(denimButtonBgRgb, 0.08)
+          ? cssVar(buttonBgRgb, 0.08)
           : cssVar(centerChannelColorRgb, 0.08)};
       color: ${destructive
         ? cssVar(errorTextColorRgb)
         : selected
-          ? cssVar(denimButtonBgRgb)
+          ? cssVar(buttonBgRgb)
           : cssVar(centerChannelColorRgb)};
     `,
     outlined: css`
@@ -89,12 +89,12 @@ const getVariantStyles = (
       border-color: ${destructive
         ? cssVar(errorTextColorRgb)
         : selected
-          ? cssVar(denimButtonBgRgb)
+          ? cssVar(buttonBgRgb)
           : cssVar(centerChannelColorRgb, 0.16)};
       color: ${destructive
         ? cssVar(errorTextColorRgb)
         : selected
-          ? cssVar(denimButtonBgRgb)
+          ? cssVar(buttonBgRgb)
           : cssVar(centerChannelColorRgb)};
     `,
   };
@@ -122,7 +122,7 @@ const StyledChip = styled.div<ChipProps>`
     background-color: ${props => props.destructive 
       ? cssVar(errorTextColorRgb, 0.12)
       : props.selected 
-        ? cssVar(denimButtonBgRgb, 0.12)
+        ? cssVar(buttonBgRgb, 0.12)
         : cssVar(centerChannelColorRgb, 0.12)};
   }
 
@@ -130,7 +130,7 @@ const StyledChip = styled.div<ChipProps>`
     background-color: ${props => props.destructive 
       ? cssVar(errorTextColorRgb, 0.16)
       : props.selected 
-        ? cssVar(denimButtonBgRgb, 0.16)
+        ? cssVar(buttonBgRgb, 0.16)
         : cssVar(centerChannelColorRgb, 0.16)};
   }
 
