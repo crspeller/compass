@@ -92,7 +92,12 @@ const InputContainer = styled.div`
   }
 `;
 
-const StyledInput = styled.input<TextInputProps>`
+const StyledInput = styled.input<{
+  $size?: TextInputSize;
+  $error?: boolean;
+  $hasLeadingIcon?: boolean;
+  $hasTrailingIcon?: boolean;
+}>`
   width: 100%;
   border: var(${borderDefault});
   border-radius: var(${radiusM});
@@ -100,17 +105,17 @@ const StyledInput = styled.input<TextInputProps>`
   color: ${cssVar(centerChannelColorRgb)};
   transition: all 0.2s ease-in-out;
 
-  ${props => getSizeStyles(props.size || TextInputSize.Medium)}
+  ${props => getSizeStyles(props.$size || TextInputSize.Medium)}
   
-  ${props => props.leadingIcon && css`
+  ${props => props.$hasLeadingIcon && css`
     padding-left: 40px;
   `}
   
-  ${props => props.trailingIcon && css`
+  ${props => props.$hasTrailingIcon && css`
     padding-right: 40px;
   `}
 
-  ${props => props.error && css`
+  ${props => props.$error && css`
     border-color: ${cssVar(errorTextColorRgb)};
   `}
 
@@ -165,11 +170,11 @@ export const TextInput: React.FC<TextInputProps> = ({
       <InputContainer>
         {leadingIcon && <span className="leading-icon">{leadingIcon}</span>}
         <StyledInput
-          size={size}
+          $size={size}
+          $error={error}
+          $hasLeadingIcon={!!leadingIcon}
+          $hasTrailingIcon={!!trailingIcon}
           disabled={disabled}
-          error={error}
-          leadingIcon={leadingIcon}
-          trailingIcon={trailingIcon}
           {...props}
         />
         {trailingIcon && <span className="trailing-icon">{trailingIcon}</span>}

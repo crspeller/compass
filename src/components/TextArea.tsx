@@ -49,11 +49,13 @@ const getSizeStyles = (size: TextAreaSize) => {
   return sizes[size];
 };
 
-const StyledTextArea = styled.textarea<TextAreaProps>`
+const StyledTextArea = styled.textarea<{
+  $size?: TextAreaSize;
+  $error?: boolean;
+  $fullWidth?: boolean;
+}>`
   display: block;
-  width: ${props => props.fullWidth ? '100%' : '320px'};
-  min-height: ${props => props.minRows ? `${props.minRows * 1.5}em` : '80px'};
-  max-height: ${props => props.maxRows ? `${props.maxRows * 1.5}em` : 'none'};
+  width: ${props => props.$fullWidth ? '100%' : '320px'};
   background-color: ${cssVar(centerChannelBgRgb)};
   color: ${cssVar(centerChannelColorRgb)};
   border: var(${borderDefault});
@@ -97,12 +99,14 @@ export const TextArea: React.FC<TextAreaProps> = ({
 }) => {
   return (
     <StyledTextArea
-      size={size}
-      error={error}
+      $size={size}
+      $error={error}
+      $fullWidth={fullWidth}
       disabled={disabled}
-      fullWidth={fullWidth}
-      minRows={minRows}
-      maxRows={maxRows}
+      style={{
+        minHeight: minRows ? `${minRows * 1.5}em` : '80px',
+        maxHeight: maxRows ? `${maxRows * 1.5}em` : 'none'
+      }}
       {...props}
     />
   );

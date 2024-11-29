@@ -116,7 +116,12 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   return baseStyles[variant];
 };
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<{
+  $size?: ButtonSize;
+  $variant?: ButtonVariant;
+  $fullWidth?: boolean;
+  $destructive?: boolean;
+}>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -126,10 +131,10 @@ const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
-  width: ${props => props.fullWidth ? '100%' : 'auto'};
+  width: ${props => props.$fullWidth ? '100%' : 'auto'};
 
-  ${props => getSizeStyles(props.size || ButtonSize.Medium)}
-  ${props => getVariantStyles(props.variant || ButtonVariant.Primary, props.destructive || false)}
+  ${props => getSizeStyles(props.$size || ButtonSize.Medium)}
+  ${props => getVariantStyles(props.$variant || ButtonVariant.Primary, props.$destructive || false)}
 
   ${props => {
     if (props.variant === 'secondary') {
@@ -205,11 +210,11 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <StyledButton
-      size={size}
-      variant={variant}
-      fullWidth={fullWidth}
+      $size={size}
+      $variant={variant}
+      $fullWidth={fullWidth}
+      $destructive={destructive}
       disabled={disabled}
-      destructive={destructive}
       onClick={disabled ? undefined : onClick}
       {...props}
     >
