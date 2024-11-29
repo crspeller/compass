@@ -56,8 +56,8 @@ const getSizeStyles = (size: CheckboxSize) => {
 
 const CheckboxContainer = styled.label<{
   $size: CheckboxSize;
-  $invalid: boolean;
-  $disabled: boolean;
+  $invalid?: boolean;
+  $disabled?: boolean;
 }>`
   ${props => getSizeStyles(props.$size)}
   display: inline-flex;
@@ -128,7 +128,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   indeterminate = false,
   invalid = false,
   disabled = false,
-  onChange,
+  onChange = () => {},
   ...props
 }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);

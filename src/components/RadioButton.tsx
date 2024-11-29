@@ -48,7 +48,7 @@ const getSizeStyles = (size: RadioButtonSize) => {
   return sizes[size];
 };
 
-const RadioContainer = styled.label<{ size: RadioButtonSize; disabled?: boolean; destructive?: boolean }>`
+const RadioContainer = styled.label<{ $size: RadioButtonSize; $disabled?: boolean; $destructive?: boolean }>`
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -65,10 +65,10 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
   height: 0;
 `;
 
-const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destructive?: boolean }>`
+const StyledRadio = styled.div<{ $checked?: boolean; $disabled?: boolean; $destructive?: boolean }>`
   width: var(--radio-size);
   height: var(--radio-size);
-  border: 2px solid ${props => props.destructive ? 
+  border: 2px solid ${props => props.$destructive ? 
     cssVar(errorTextColorRgb) : 
     cssVar(buttonBgRgb)};
   border-radius: 50%;
@@ -83,10 +83,10 @@ const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destruct
     width: calc(var(--radio-size) * 0.5);
     height: calc(var(--radio-size) * 0.5);
     border-radius: 50%;
-    background: ${props => props.destructive ? 
+    background: ${props => props.$destructive ? 
       cssVar(errorTextColorRgb) : 
       cssVar(buttonBgRgb)};
-    opacity: ${props => props.checked ? 1 : 0};
+    opacity: ${props => props.$checked ? 1 : 0};
     transition: opacity 0.2s ease-in-out;
   }
 
@@ -95,7 +95,7 @@ const StyledRadio = styled.div<{ checked?: boolean; disabled?: boolean; destruct
   }
 
   ${HiddenRadio}:hover:not(:disabled) + & {
-    border-color: ${props => props.destructive ? 
+    border-color: ${props => props.$destructive ? 
       cssVar(errorTextColorRgb, 0.8) : 
       cssVar(buttonBgRgb, 0.8)};
   }
@@ -107,14 +107,14 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   checked = false,
   disabled = false,
   destructive = false,
-  onChange,
+  onChange = () => {},
   ...props
 }) => {
   return (
     <RadioContainer 
-      size={size}
-      disabled={disabled}
-      destructive={destructive}
+      $size={size}
+      $disabled={disabled}
+      $destructive={destructive}
     >
       <HiddenRadio
         checked={checked}
@@ -123,9 +123,9 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
         {...props}
       />
       <StyledRadio 
-        checked={checked}
-        disabled={disabled}
-        destructive={destructive}
+        $checked={checked}
+        $disabled={disabled}
+        $destructive={destructive}
       />
       {label}
     </RadioContainer>
