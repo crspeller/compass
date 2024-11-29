@@ -1,6 +1,18 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import { themeVariables } from '../../styles/variables';
+import {
+  buttonColor,
+  centerChannelBg,
+  centerChannelColor,
+  denimButtonBg,
+  errorText,
+  linkColor,
+  radiusM,
+  secondaryBlue,
+  semanticColorDanger,
+  sidebarTextHoverBg,
+  borderDefault
+} from '../../styles/variables';
 
 export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'link';
@@ -52,37 +64,37 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   const baseStyles = {
     primary: css`
       background-color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.denimButtonBg})`};
-      color: var(${themeVariables.buttonColor});
+        `var(${semanticColorDanger})` : 
+        `var(${denimButtonBg})`};
+      color: var(${buttonColor});
     `,
     secondary: css`
       background-color: transparent;
-      border: var(${themeVariables.borderDefault});
+      border: var(${borderDefault});
       border-color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.denimButtonBg})`};
+        `var(${semanticColorDanger})` : 
+        `var(${denimButtonBg})`};
       color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.denimButtonBg})`};
+        `var(${semanticColorDanger})` : 
+        `var(${denimButtonBg})`};
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.denimButtonBg})`};
+        `var(${semanticColorDanger})` : 
+        `var(${denimButtonBg})`};
     `,
     quaternary: css`
-      background-color: var(${themeVariables.centerChannelBg});
+      background-color: var(${centerChannelBg});
       color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.centerChannelColor})`};
+        `var(${semanticColorDanger})` : 
+        `var(${centerChannelColor})`};
     `,
     link: css`
       background-color: transparent;
       color: ${destructive ? 
-        `var(${themeVariables.semanticColorDanger})` : 
-        `var(${themeVariables.linkColor})`};
+        `var(${semanticColorDanger})` : 
+        `var(${linkColor})`};
       text-decoration: underline;
       padding: 0;
     `,
@@ -96,7 +108,7 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   gap: 8px;
   border: none;
-  border-radius: var(${themeVariables.radiusM});
+  border-radius: var(${radiusM});
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
@@ -114,7 +126,7 @@ const StyledButton = styled.button<ButtonProps>`
   }
 
   &:focus:not(:disabled) {
-    outline: 2px solid var(${themeVariables.linkColor});
+    outline: 2px solid var(${linkColor});
     outline-offset: 1px;
   }
 
