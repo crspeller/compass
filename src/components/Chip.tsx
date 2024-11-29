@@ -46,18 +46,21 @@ const getSizeStyles = (size: ChipSize) => {
   const sizes = {
     small: css`
       padding: 2px 8px;
-      font-size: 12px;
-      height: 24px;
+      font-size: 11px;
+      height: 20px;
+      gap: 4px;
     `,
     medium: css`
       padding: 4px 12px;
-      font-size: 14px;
-      height: 32px;
+      font-size: 12px;
+      height: 28px;
+      gap: 6px;
     `,
     large: css`
       padding: 6px 16px;
-      font-size: 16px;
-      height: 40px;
+      font-size: 14px;
+      height: 36px;
+      gap: 8px;
     `,
   };
   return sizes[size];
@@ -71,10 +74,10 @@ const getVariantStyles = (
   const baseStyles = {
     filled: css`
       background-color: ${destructive 
-        ? cssVar(errorTextColorRgb, 0.1)
+        ? cssVar(errorTextColorRgb, 0.08)
         : selected 
-          ? cssVar(denimButtonBgRgb, 0.1)
-          : cssVar(centerChannelBgRgb, 0.1)};
+          ? cssVar(denimButtonBgRgb, 0.08)
+          : cssVar(centerChannelColorRgb, 0.08)};
       color: ${destructive
         ? cssVar(errorTextColorRgb)
         : selected
@@ -103,7 +106,6 @@ const StyledChip = styled.div<ChipProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   border-radius: var(${radiusM});
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   font-weight: 500;
@@ -118,11 +120,19 @@ const StyledChip = styled.div<ChipProps>`
   )}
 
   &:hover:not(:disabled) {
-    filter: brightness(0.95);
+    background-color: ${props => props.destructive 
+      ? cssVar(errorTextColorRgb, 0.12)
+      : props.selected 
+        ? cssVar(denimButtonBgRgb, 0.12)
+        : cssVar(centerChannelColorRgb, 0.12)};
   }
 
   &:active:not(:disabled) {
-    filter: brightness(0.9);
+    background-color: ${props => props.destructive 
+      ? cssVar(errorTextColorRgb, 0.16)
+      : props.selected 
+        ? cssVar(denimButtonBgRgb, 0.16)
+        : cssVar(centerChannelColorRgb, 0.16)};
   }
 
   &:focus:not(:disabled) {
