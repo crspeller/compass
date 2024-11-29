@@ -56,11 +56,11 @@ const getSizeStyles = (size: TextInputSize) => {
   return sizes[size];
 };
 
-const InputWrapper = styled.div<{ fullWidth?: boolean }>`
+const InputWrapper = styled.div<{ $fullWidth?: boolean }>`
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
-  width: ${props => props.fullWidth ? '100%' : 'auto'};
+  width: ${props => props.$fullWidth ? '100%' : 'auto'};
 `;
 
 const Label = styled.label`
@@ -120,18 +120,18 @@ const StyledInput = styled.input<{
   `}
 
   &:hover:not(:disabled) {
-    border-color: ${props => props.error ? 
+    border-color: ${props => props.$error ? 
       cssVar(errorTextColorRgb) : 
       cssVar(centerChannelColorRgb, 0.6)};
   }
 
   &:focus {
     outline: none;
-    border-color: ${props => props.error ? 
+    border-color: ${props => props.$error ? 
       cssVar(errorTextColorRgb) : 
       cssVar(linkColorRgb)};
     box-shadow: 0 0 0 2px ${cssVar(centerChannelBgRgb)}, 
-                0 0 0 4px ${props => props.error ? 
+                0 0 0 4px ${props => props.$error ? 
                   cssVar(errorTextColorRgb, 0.2) : 
                   cssVar(linkColorRgb, 0.2)};
   }
@@ -146,9 +146,9 @@ const StyledInput = styled.input<{
   }
 `;
 
-const HelperText = styled.span<{ error?: boolean }>`
+const HelperText = styled.span<{ $error?: boolean }>`
   font-size: 12px;
-  color: ${props => props.error ? 
+  color: ${props => props.$error ? 
     cssVar(errorTextColorRgb) : 
     cssVar(centerChannelColorRgb, 0.6)};
 `;
@@ -165,7 +165,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   ...props
 }) => {
   return (
-    <InputWrapper fullWidth={fullWidth}>
+    <InputWrapper $fullWidth={fullWidth}>
       {label && <Label>{label}</Label>}
       <InputContainer>
         {leadingIcon && <span className="leading-icon">{leadingIcon}</span>}
@@ -179,7 +179,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         />
         {trailingIcon && <span className="trailing-icon">{trailingIcon}</span>}
       </InputContainer>
-      {helperText && <HelperText error={error}>{helperText}</HelperText>}
+      {helperText && <HelperText $error={error}>{helperText}</HelperText>}
     </InputWrapper>
   );
 };
