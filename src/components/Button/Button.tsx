@@ -1,14 +1,15 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import {
-  buttonColor,
-  centerChannelBg,
-  centerChannelColor,
-  denimButtonBg,
-  linkColor,
+  buttonColorRgb,
+  centerChannelBgRgb,
+  centerChannelColorRgb,
+  denimButtonBgRgb,
+  linkColorRgb,
   radiusM,
   semanticColorDanger,
-  borderDefault
+  borderDefault,
+  cssVar
 } from '../../styles/variables';
 
 export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
@@ -65,37 +66,37 @@ const getVariantStyles = (variant: ButtonVariant, destructive: boolean) => {
   const baseStyles = {
     primary: css`
       background-color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${denimButtonBg})`};
-      color: var(${buttonColor});
+        cssVar(semanticColorDanger) : 
+        cssVar(denimButtonBgRgb)};
+      color: ${cssVar(buttonColorRgb)};
     `,
     secondary: css`
       background-color: transparent;
       border: var(${borderDefault});
       border-color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${denimButtonBg})`};
+        cssVar(semanticColorDanger) : 
+        cssVar(denimButtonBgRgb)};
       color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${denimButtonBg})`};
+        cssVar(semanticColorDanger) : 
+        cssVar(denimButtonBgRgb)};
     `,
     tertiary: css`
       background-color: transparent;
       color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${denimButtonBg})`};
+        cssVar(semanticColorDanger) : 
+        cssVar(denimButtonBgRgb)};
     `,
     quaternary: css`
-      background-color: var(${centerChannelBg});
+      background-color: ${cssVar(centerChannelBgRgb)};
       color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${centerChannelColor})`};
+        cssVar(semanticColorDanger) : 
+        cssVar(centerChannelColorRgb)};
     `,
     link: css`
       background-color: transparent;
       color: ${destructive ? 
-        `var(${semanticColorDanger})` : 
-        `var(${linkColor})`};
+        cssVar(semanticColorDanger) : 
+        cssVar(linkColorRgb)};
       text-decoration: underline;
       padding: 0;
     `,
@@ -123,26 +124,26 @@ const StyledButton = styled.button<ButtonProps>`
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger}, 0.2)` : 
-            `var(${denimButtonBg}, 0.2)`};
+            cssVar(semanticColorDanger, 0.2) : 
+            cssVar(denimButtonBgRgb, 0.2)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger}, 0.3)` : 
-            `var(${denimButtonBg}, 0.3)`};
+            cssVar(semanticColorDanger, 0.3) : 
+            cssVar(denimButtonBgRgb, 0.3)};
         }
       `;
     } else if (props.variant === 'tertiary') {
       return css`
         &:hover:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger}, 0.1)` : 
-            `var(${denimButtonBg}, 0.1)`};
+            cssVar(semanticColorDanger, 0.1) : 
+            cssVar(denimButtonBgRgb, 0.1)};
         }
         &:active:not(:disabled) {
           background-color: ${props.destructive ? 
-            `var(${semanticColorDanger}, 0.2)` : 
-            `var(${denimButtonBg}, 0.2)`};
+            cssVar(semanticColorDanger, 0.2) : 
+            cssVar(denimButtonBgRgb, 0.2)};
         }
       `;
     } else {
@@ -163,7 +164,7 @@ const StyledButton = styled.button<ButtonProps>`
 
   &:focus-visible:not(:disabled) {
     outline: none;
-    box-shadow: 0 0 0 2px var(${centerChannelBg}), 0 0 0 4px var(${linkColor});
+    box-shadow: 0 0 0 2px ${cssVar(centerChannelBgRgb)}, 0 0 0 4px ${cssVar(linkColorRgb)};
   }
 
   &:disabled {
