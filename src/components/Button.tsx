@@ -137,28 +137,28 @@ const StyledButton = styled.button<{
   ${props => getVariantStyles(props.$variant || ButtonVariant.Primary, props.$destructive || false)}
 
   ${props => {
-    if (props.variant === 'secondary') {
+    if (props.$variant === 'secondary') {
       return css`
         &:hover:not(:disabled) {
-          background-color: ${props.destructive ? 
+          background-color: ${props.$destructive ? 
             cssVar(errorTextColorRgb, 0.2) : 
             cssVar(buttonBgRgb, 0.2)};
         }
         &:active:not(:disabled) {
-          background-color: ${props.destructive ? 
+          background-color: ${props.$destructive ? 
             cssVar(errorTextColorRgb, 0.3) : 
             cssVar(buttonBgRgb, 0.3)};
         }
       `;
-    } else if (props.variant === 'tertiary') {
+    } else if (props.$variant === 'tertiary') {
       return css`
         &:hover:not(:disabled) {
-          background-color: ${props.destructive ? 
+          background-color: ${props.$destructive ? 
             cssVar(errorTextColorRgb, 0.1) : 
             cssVar(buttonBgRgb, 0.1)};
         }
         &:active:not(:disabled) {
-          background-color: ${props.destructive ? 
+          background-color: ${props.$destructive ? 
             cssVar(errorTextColorRgb, 0.2) : 
             cssVar(buttonBgRgb, 0.2)};
         }

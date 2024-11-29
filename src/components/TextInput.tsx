@@ -16,7 +16,7 @@ export enum TextInputSize {
   Large = 'large'
 }
 
-export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** The size of the input */
   size?: TextInputSize;
   /** Whether the input is disabled */
