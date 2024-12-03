@@ -1,6 +1,6 @@
 # Compass
 
-An experimental project to recreate the [Mattermost Compass Design System](https://compass.mattermost.com/) components using AI-assisted development.
+An experimental project to create the [Mattermost Compass Design System](https://compass.mattermost.com/) components using AI-assisted development.
 
 ## Overview
 
@@ -20,13 +20,6 @@ The following components have been implemented:
 
 Each component supports multiple sizes (Small, Medium, Large) and follows the Compass Design System specifications.
 
-## Technology Stack
-
-- React
-- TypeScript
-- Styled Components
-- Vite
-
 ## Development
 
 To get started with development:
@@ -44,7 +37,3 @@ npm run build
 # Type checking
 npm run type-check
 ```
-
-## License
-
-This is an experimental project and is not affiliated with Mattermost.
