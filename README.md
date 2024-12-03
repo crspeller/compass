@@ -24,18 +24,9 @@ Each component supports multiple sizes (Small, Medium, Large) and follows the Co
 
 The project includes a Fish shell script (`makecomponents.fish`) that automates the process of generating components from screenshots. The script uses Aider to process image files and create corresponding React components.
 
-### Prerequisites
-
-- [Fish shell](https://fishshell.com/)
-- [Aider](https://aider.chat/)
-- A directory containing component screenshots (jpg, jpeg, png, or gif)
-
 ### Usage
 
 ```bash
-# Make the script executable
-chmod +x makecomponents.fish
-
 # Run the script with your screenshots directory
 ./makecomponents.fish path/to/screenshots
 ```
@@ -63,3 +54,7 @@ npm run build
 # Type checking
 npm run type-check
 ```
+
+## Future
+
+Ideally this project could evolved into an automated pipeline for creating components from compass Figma designs. Perhaps with a Figma plugin we could get some better results by exporting all the required information. 
