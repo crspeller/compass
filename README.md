@@ -20,6 +20,32 @@ The following components have been implemented:
 
 Each component supports multiple sizes (Small, Medium, Large) and follows the Compass Design System specifications.
 
+## Component Generation
+
+The project includes a Fish shell script (`makecomponents.fish`) that automates the process of generating components from screenshots. The script uses Aider to process image files and create corresponding React components.
+
+### Prerequisites
+
+- [Fish shell](https://fishshell.com/)
+- [Aider](https://aider.chat/)
+- A directory containing component screenshots (jpg, jpeg, png, or gif)
+
+### Usage
+
+```bash
+# Make the script executable
+chmod +x makecomponents.fish
+
+# Run the script with your screenshots directory
+./makecomponents.fish path/to/screenshots
+```
+
+The script will:
+1. Process each image in the specified directory
+2. Generate a new component based on the image filename
+3. Add the component to the project's exports
+4. Include the component in the test application
+
 ## Development
 
 To get started with development:
